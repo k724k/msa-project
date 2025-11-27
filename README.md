@@ -8,6 +8,18 @@
 - [point-service](https://github.com/k724k/point-serivce)
 
 ## ✅ Tech Stack
-- Java, Spring Boot, Spring Data JPA  
-- Apache Kafka, Spring Cloud Gateway  
-- MySQL, Docker, GitHub Actions, AWS
+  <!-- Java, Spring Boot, Spring Data JPA -->
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Spring_Data_JPA-6DB33F?style=for-the-badge&logo=spring&logoColor=white" />&nbsp
+
+  <!-- Apache Kafka, Spring Cloud Gateway -->
+  <img src="https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apachekafka&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Spring_Cloud_Gateway-6DB33F?style=for-the-badge&logo=spring&logoColor=white" />&nbsp
+
+  <!-- MySQL, Docker, GitHub Actions, AWS -->
+  <img src="https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />&nbsp
+</div>
