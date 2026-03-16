@@ -1,10 +1,8 @@
 # 🏷️ msa-project
 
-Spring Cloud 기반 마이크로서비스 아키텍처(MSA)와  
-Kafka 이벤트 기반 서비스 간 통신 구조를 학습하기 위해 구현한 프로젝트입니다.
+Spring Cloud 기반 마이크로서비스 아키텍처(MSA)와 Kafka 이벤트 기반 서비스 간 통신 구조를 학습하기 위해 구현한 프로젝트입니다.
 
-API Gateway를 통해 단일 진입점을 구성하고  
-User, Board, Point 서비스를 분리하여 이벤트 기반으로 연동했습니다.
+API Gateway를 통해 단일 진입점을 구성하고 User, Board, Point 서비스를 분리하여 이벤트 기반으로 연동했습니다.
 
 ---
 
@@ -32,8 +30,7 @@ Kafka Event
 ↓  
 Point Service  
 
-게시글 작성과 같은 이벤트 발생 시  
-Kafka를 통해 다른 서비스가 이벤트를 수신하여 처리합니다.
+게시글 작성과 같은 이벤트 발생 시 Kafka를 통해 다른 서비스가 이벤트를 수신하여 처리합니다.
 
 ---
 
