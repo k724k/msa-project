@@ -24,13 +24,15 @@ Client
 ↓  
 API Gateway  
 ↓  
-User Service / Board Service  
-↓  
-Kafka Event  
-↓  
-Point Service  
+Board Service  
+↓ (Publish Event)  
+Kafka  
+↓ (Consume Event)  
+User Service / Point Service  
 
-게시글 작성과 같은 이벤트 발생 시 Kafka를 통해 다른 서비스가 이벤트를 수신하여 처리합니다.
+게시글 작성 이벤트 발생 시 Kafka를 통해 다른 서비스가 이벤트를 수신하여 처리합니다.
+
+또한 게시글 작성 요청 시 Board Service는 Point Service API를 호출하여 포인트 차감을 수행합니다.
 
 ---
 
@@ -38,10 +40,10 @@ Point Service
 
 | Service | Description |
 |-------|-------------|
-| api-gateway-service | 클라이언트 요청을 각 서비스로 라우팅하고 JWT 인증 처리 |
-| user-service | 사용자 계정 관리 및 인증 처리 |
-| board-service | 게시글 CRUD 및 이벤트 발행 |
-| point-service | 이벤트 기반 포인트 적립 및 차감 처리 |
+| api-gateway-service | 클라이언트 요청 라우팅 및 JWT 인증 처리 |
+| user-service | 사용자 계정 관리 및 게시글 이벤트 기반 활동 점수 처리 |
+| board-service | 게시글 CRUD 및 Kafka 이벤트 발행 |
+| point-service | 포인트 차감 API 및 Kafka 이벤트 기반 포인트 적립 |
 
 Service Repository
 
@@ -57,10 +59,11 @@ Service Repository
 게시글 작성 시 서비스 간 흐름
 
 1️⃣ Client → API Gateway 요청  
-2️⃣ Board Service 게시글 저장  
-3️⃣ Kafka 이벤트 발행  
-4️⃣ User Service 이벤트 수신 → 활동 점수 증가  
-5️⃣ Point Service 이벤트 수신 → 포인트 적립  
+2️⃣ Board Service → Point Service API 호출 (포인트 차감)  
+3️⃣ 게시글 저장  
+4️⃣ Kafka 이벤트 발행  
+5️⃣ User Service 이벤트 수신 → 활동 점수 증가  
+6️⃣ Point Service 이벤트 수신 → 포인트 적립  
 
 이벤트 기반 구조를 통해 서비스 간 결합도를 낮췄습니다.
 
@@ -82,3 +85,12 @@ Service Repository
 <img src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
 
 </div>
+
+---
+
+# 💡 What I Learned
+
+- MSA 환경에서 서비스 책임 분리의 중요성
+- Kafka 기반 이벤트 아키텍처 설계
+- 동기 통신(API)과 비동기 통신(Event)의 역할 차이
+- 서비스 간 결합도를 낮추는 설계 방법
